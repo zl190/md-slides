@@ -62,12 +62,11 @@ The skill uses natural language — just describe what you want:
 # Convert existing markdown
 /md-slides "Convert slides.md to PDF"
 
-# Specify format
-/md-slides "Make a PPTX from my notes.md"
-
 # With style preferences
 /md-slides "Create slides about Q4 results, executive style, keep it brief"
 ```
+
+**Workflow:** When generating from a prompt, Claude writes the `.md` file first so you can review and edit before converting to PDF/PPTX.
 
 ## Flavors
 

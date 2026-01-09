@@ -8,6 +8,24 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 Convert Markdown source files to presentation slides in multiple formats.
 
+## Workflow
+
+**From prompt (recommended workflow):**
+```
+Prompt → Claude writes slides.md → User reviews/edits → Convert to PDF/PPTX
+```
+
+1. Generate markdown content based on user's prompt
+2. **Write to a .md file first** (e.g., `slides.md` or `output/slides.md`)
+3. Tell user: "I've created `slides.md`. Review and edit if needed."
+4. **Ask before converting**: "Ready to convert to PDF/PPTX?"
+5. Convert using the appropriate tool
+
+**From existing file:**
+```
+slides.md → Select tool → Convert to PDF/PPTX
+```
+
 ## Core Concept
 
 **One source, multiple outputs:**
