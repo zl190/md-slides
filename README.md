@@ -14,6 +14,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Claude_Code-Skill-blueviolet?logo=anthropic" alt="Claude Code Skill">
+  <img src="https://img.shields.io/badge/Markdown-000?logo=markdown" alt="Markdown">
+  <img src="https://img.shields.io/badge/LaTeX-008080?logo=latex" alt="LaTeX">
   <img src="https://img.shields.io/badge/Marp-CLI-blue?logo=markdown" alt="Marp">
   <img src="https://img.shields.io/badge/Pandoc-Beamer-orange?logo=latex" alt="Pandoc">
   <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
