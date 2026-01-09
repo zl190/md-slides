@@ -32,7 +32,6 @@ jobs:
         run: |
           mkdir -p _site
           marp docs/sample-universal.md -o _site/index.html --html
-          marp docs/sample-universal.md -o _site/slides.html --html
           cp -r assets _site/
 
       - name: Upload artifact
