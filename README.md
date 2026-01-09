@@ -53,34 +53,25 @@ git clone https://github.com/zl190/md-slides.git
 
 ## Usage
 
-### Quick Generation
-
-Generate slides from a prompt — Claude writes the content and outputs the file:
+The skill uses natural language — just describe what you want:
 
 ```bash
+# Generate from a topic
 /md-slides "Create slides about machine learning basics"
-```
 
-### From Existing Markdown
+# Convert existing markdown
+/md-slides "Convert slides.md to PDF"
 
-Convert your own markdown file to presentation format:
+# Specify format
+/md-slides "Make a PPTX from my notes.md"
 
-```bash
-/md-slides slides.md --format pdf
-/md-slides slides.md --format pptx
-```
-
-### With Flavors
-
-Customize the output style:
-
-```bash
-/md-slides "Create slides about our Q4 results" --audience manager --style professional
+# With style preferences
+/md-slides "Create slides about Q4 results, executive style, keep it brief"
 ```
 
 ## Flavors
 
-Customize your slides with these parameters:
+Claude understands these style preferences:
 
 | Flavor | Options | Default |
 |--------|---------|---------|
@@ -89,13 +80,18 @@ Customize your slides with these parameters:
 | **language** | `en` · `zh` · `mixed` | en |
 | **length** | `brief` (5-8) · `standard` (10-15) · `detailed` (20+) | standard |
 
-### Example Combinations
+### Examples
 
-| Use Case | Flavors |
-|----------|---------|
-| Executive summary | `--audience manager --style professional --length brief` |
-| Technical tutorial | `--audience developer --style minimal --length detailed` |
-| Research presentation | `--audience general --style academic --language mixed` |
+```bash
+# Executive summary
+/md-slides "Q4 results for management, brief and professional"
+
+# Technical tutorial
+/md-slides "Git branching tutorial for developers, detailed with code examples"
+
+# Research presentation
+/md-slides "ML research findings, academic style, bilingual"
+```
 
 ## Supported Tools
 
