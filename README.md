@@ -8,7 +8,8 @@
   <a href="#installation">Install</a> •
   <a href="#usage">Usage</a> •
   <a href="#flavors">Flavors</a> •
-  <a href="https://zl190.github.io/md-slides/">Live Demo</a>
+  <a href="https://zl190.github.io/md-slides/">Live Demo</a> •
+  <a href="docs/presentation-showcase-zh.pdf">Showcase (PDF)</a>
 </p>
 
 <p align="center">
@@ -175,7 +176,6 @@ pandoc slides.md -t revealjs -s -o slides.html
 ```
 .claude/skills/md-slides/   # The Claude Code skill
 docs/                       # Sample markdown & research
-samples/                    # Code examples
 assets/                     # Comparison screenshots
 ```
 
