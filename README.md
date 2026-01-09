@@ -18,13 +18,9 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
 </p>
 
-```mermaid
-flowchart LR
-    A["📝 Markdown"] --> B["🤖 /md-slides"]
-    B --> C["📊 PDF"]
-    B --> D["📊 PPTX"]
-    B --> E["🌐 HTML"]
-```
+<p align="center">
+<img src="assets/hero.png" width="700" alt="Markdown to Slides workflow">
+</p>
 
 ---
 
@@ -54,22 +50,29 @@ git clone https://github.com/zl190/md-slides-tools.git
 
 ## Usage
 
-### Basic
+### Quick Generation
+
+Generate slides from a prompt — Claude writes the content and outputs the file:
 
 ```bash
 /md-slides "Create slides about machine learning basics"
 ```
 
+### From Existing Markdown
+
+Convert your own markdown file to presentation format:
+
+```bash
+/md-slides slides.md --format pdf
+/md-slides slides.md --format pptx
+```
+
 ### With Flavors
+
+Customize the output style:
 
 ```bash
 /md-slides "Create slides about our Q4 results" --audience manager --style professional
-```
-
-### Specify Output
-
-```bash
-/md-slides "Tutorial on Git branching" --format pptx
 ```
 
 ## Flavors
