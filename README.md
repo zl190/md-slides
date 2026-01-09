@@ -1,93 +1,70 @@
-# Markdown to Slides Showcase
+<h1 align="center">md-slides-tools</h1>
 
-A research project comparing tools for generating presentation slides from Markdown, with focus on LLM agent integration.
+<p align="center">
+  <strong>Turn Markdown into beautiful slides with one command</strong>
+</p>
 
-## Overview
+<p align="center">
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#visual-comparison">Examples</a> •
+  <a href="https://zl190.github.io/md-slides-tools/">Live Demo</a> •
+  <a href="docs/report-research-zh.md">Research Report</a>
+</p>
 
-This project explores various approaches to convert Markdown into presentation slides (PDF, PPTX, HTML), evaluating each tool's:
-- Visual output quality
-- Ease of use
-- LLM agent integration capability
+<p align="center">
+  <img src="https://img.shields.io/badge/Marp-CLI-blue?logo=markdown" alt="Marp">
+  <img src="https://img.shields.io/badge/Pandoc-Beamer-orange?logo=latex" alt="Pandoc">
+  <img src="https://img.shields.io/badge/python--pptx-PPTX-green?logo=python" alt="python-pptx">
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+</p>
 
-## Tools Evaluated
+<p align="center">
+  <img src="assets/marp_gaia-1.png" width="45%" alt="Marp Output">
+  <img src="assets/beamer_metropolis-1.png" width="45%" alt="Beamer Output">
+</p>
 
-| Tool | Output Formats | LLM Score | Best For |
-|------|----------------|:---------:|----------|
-| **Marp** | PDF, PPTX, HTML | 24/25 | Multi-format, Markdown workflow |
-| **python-pptx** | PPTX | 24/25 | Fine control, enterprise templates |
-| **reveal.js** | HTML | 23/25 | Web presentations |
-| **Slidev** | HTML | 21/25 | Developer talks |
-| **Pandoc Beamer** | PDF | 20/25 | Academic, LaTeX |
-| **Pandoc PPTX** | PPTX | 20/25 | Simple editable PPTX |
+---
+
+## Why This Tool?
+
+Writing slides in PowerPoint is slow. This toolkit lets you:
+
+- **Write in Markdown** → Focus on content, not formatting
+- **Generate PDF, PPTX, HTML** → One source, multiple outputs
+- **Use with AI/LLM** → Claude/GPT can write slides for you
 
 ## Quick Start
 
-### Marp (Recommended)
-
 ```bash
-# Install
+# Install Marp CLI
 npm install -g @marp-team/marp-cli
 
-# Generate PDF
-marp docs/sample-universal.md -o output/slides.pdf
-
-# Generate PPTX
-marp docs/sample-universal.md -o output/slides.pptx
-
-# Generate HTML
-marp docs/sample-universal.md -o output/slides.html
+# Convert markdown to slides
+marp your-slides.md -o slides.pdf      # PDF
+marp your-slides.md -o slides.pptx     # PowerPoint
+marp your-slides.md -o slides.html     # Web
 ```
 
-### Pandoc Beamer
+That's it. Write markdown, get slides.
 
-```bash
-# Install
-sudo apt install pandoc texlive-xetex
+## Tool Comparison
 
-# Generate PDF (with CJK support)
-pandoc docs/sample-universal.md -t beamer --pdf-engine=xelatex -o output/slides.pdf
-```
+| Tool | Formats | LLM Score | Use Case |
+|------|---------|:---------:|----------|
+| **[Marp](https://marp.app/)** | PDF, PPTX, HTML | ⭐⭐⭐⭐⭐ | General purpose, best balance |
+| **[python-pptx](https://python-pptx.readthedocs.io/)** | PPTX | ⭐⭐⭐⭐⭐ | Fine control, templates |
+| **[reveal.js](https://revealjs.com/)** | HTML | ⭐⭐⭐⭐ | Web presentations |
+| **[Pandoc Beamer](https://pandoc.org/)** | PDF | ⭐⭐⭐⭐ | Academic, math-heavy |
 
-### python-pptx
-
-```bash
-# Install
-pip install python-pptx
-
-# Run example
-python samples/test_python_pptx.py
-```
-
-## Project Structure
-
-```
-md-slides-tools/
-├── README.md                          # This file
-├── CLAUDE.md                          # Claude Code instructions
-├── docs/
-│   ├── presentation-showcase-zh.md    # Main showcase presentation (Chinese)
-│   ├── report-research-zh.md          # Detailed research report (Chinese)
-│   ├── sample-universal.md            # Universal test markdown
-│   └── sample-marp-format.md          # Marp-specific sample
-├── output/                            # Generated slides (gitignored)
-├── screenshots/                       # Test artifacts (gitignored)
-├── assets/                            # Documentation images (committed)
-│   ├── marp_default-1.png
-│   ├── beamer_metropolis-1.png
-│   └── ...
-├── samples/
-│   └── test_python_pptx.py            # python-pptx example
-└── .claude/
-    └── skills/md-slides/              # Claude Code skill
-```
+> **Recommendation:** Start with **Marp** for most use cases.
 
 ## Visual Comparison
 
-### Marp vs Beamer (Cover Page)
+### Cover Pages
 
-| Marp (Default) | Beamer (Metropolis) |
-|:--------------:|:-------------------:|
-| ![Marp](assets/marp_default-1.png) | ![Beamer](assets/beamer_metropolis-1.png) |
+| Marp (Gaia Theme) | Beamer (Metropolis) |
+|:-----------------:|:-------------------:|
+| ![Marp](assets/marp_gaia-1.png) | ![Beamer](assets/beamer_metropolis-1.png) |
 
 ### Code Highlighting
 
@@ -95,56 +72,99 @@ md-slides-tools/
 |:----:|:------:|
 | ![Marp Code](assets/marp_code-2.png) | ![Beamer Code](assets/beamer_code-3.png) |
 
-### Math Formulas
+### Math Rendering
 
 | Marp (MathJax) | Beamer (LaTeX) |
 |:--------------:|:--------------:|
 | ![Marp Math](assets/marp_math-3.png) | ![Beamer Math](assets/beamer_math-4.png) |
 
-## Key Findings
+## Example Markdown
 
-1. **Marp and python-pptx tie for best LLM integration** (24/25)
-   - Marp: Simple CLI, multi-format output, Markdown input
-   - python-pptx: Full PPTX control, LLM generates Python code
+```markdown
+---
+marp: true
+theme: gaia
+---
 
-2. **Tool selection depends on use case:**
-   - Need PDF/HTML → Marp
-   - Need fine PPTX control → python-pptx
-   - Academic/Math → Pandoc Beamer
-   - Web presentation → reveal.js
+# My Presentation
 
-3. **CJK (Chinese) support:**
-   - Marp: Works out of the box
-   - Beamer: Requires `--pdf-engine=xelatex` and CJK fonts
+## Slide 2: Code
 
-## Claude Code Skill
+​```python
+def hello():
+    print("Hello, World!")
+​```
 
-This project includes a Claude Code skill (`md-slides`) for automated slide generation with flavor support:
+## Slide 3: Math
 
-```yaml
-# Example flavors
-audience: manager | developer | learner | general
-style: professional | minimal | visual | academic
-language: zh | en | mixed
-length: brief | standard | detailed
+$$E = mc^2$$
 ```
 
-Install the skill:
+## Advanced Usage
+
+<details>
+<summary><strong>Pandoc Beamer (Academic/LaTeX)</strong></summary>
+
 ```bash
-# Clone skills repo
-git clone https://github.com/zl190/claude-skills.git ~/claude-skills
-
 # Install
-cd ~/claude-skills && ./install.sh
+sudo apt install pandoc texlive-xetex
+
+# Generate PDF with themes
+pandoc slides.md -t beamer -V theme:metropolis --pdf-engine=xelatex -o slides.pdf
 ```
 
-## Documentation
+Best for: Math formulas, academic papers, LaTeX users.
 
-- **[Research Report](docs/report-research-zh.md)** - Detailed analysis (Chinese)
-- **[Showcase Presentation](docs/presentation-showcase-zh.md)** - Main presentation source (Chinese)
-- **[Sample Universal](docs/sample-universal.md)** - Test markdown with code, math, tables
-- **[Sample Marp](docs/sample-marp-format.md)** - Marp-specific format example
+</details>
+
+<details>
+<summary><strong>python-pptx (Programmatic PPTX)</strong></summary>
+
+```bash
+pip install python-pptx
+python samples/test_python_pptx.py
+```
+
+Best for: Template-based generation, enterprise workflows, LLM integration.
+
+</details>
+
+<details>
+<summary><strong>reveal.js (Web Presentations)</strong></summary>
+
+```bash
+pandoc slides.md -t revealjs -s -o slides.html -V theme=moon
+```
+
+Best for: Interactive web presentations, speaker notes.
+
+</details>
+
+## Project Structure
+
+```
+docs/               # Sample markdown files & research
+samples/            # Code examples (python-pptx)
+assets/             # Comparison screenshots
+.claude/skills/     # Claude Code integration
+```
+
+## Claude Code Integration
+
+This repo includes a Claude Code skill for AI-assisted slide generation:
+
+```bash
+# In Claude Code, use:
+/md-slides "Create a 5-slide presentation about Python async"
+```
 
 ## License
 
 MIT
+
+---
+
+<p align="center">
+  <a href="https://zl190.github.io/md-slides-tools/">View Live Demo</a> •
+  <a href="docs/report-research-zh.md">Read Full Research (中文)</a>
+</p>
