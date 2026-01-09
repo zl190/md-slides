@@ -62,21 +62,42 @@ That's it. Write markdown, get slides.
 
 ### Cover Pages
 
-| Marp (Gaia Theme) | Beamer (Metropolis) |
-|:-----------------:|:-------------------:|
-| ![Marp](assets/marp_gaia-1.png) | ![Beamer](assets/beamer_metropolis-1.png) |
+<table>
+<tr>
+<th>Marp (Gaia Theme)</th>
+<th>Beamer (Metropolis)</th>
+</tr>
+<tr>
+<td><img src="assets/marp_gaia-1.png" width="400" alt="Marp"></td>
+<td><img src="assets/beamer_metropolis-1.png" width="400" alt="Beamer"></td>
+</tr>
+</table>
 
 ### Code Highlighting
 
-| Marp | Beamer |
-|:----:|:------:|
-| ![Marp Code](assets/marp_code-2.png) | ![Beamer Code](assets/beamer_code-3.png) |
+<table>
+<tr>
+<th>Marp</th>
+<th>Beamer</th>
+</tr>
+<tr>
+<td><img src="assets/marp_code-2.png" width="400" alt="Marp Code"></td>
+<td><img src="assets/beamer_code-3.png" width="400" alt="Beamer Code"></td>
+</tr>
+</table>
 
 ### Math Rendering
 
-| Marp (MathJax) | Beamer (LaTeX) |
-|:--------------:|:--------------:|
-| ![Marp Math](assets/marp_math-3.png) | ![Beamer Math](assets/beamer_math-4.png) |
+<table>
+<tr>
+<th>Marp (MathJax)</th>
+<th>Beamer (LaTeX)</th>
+</tr>
+<tr>
+<td><img src="assets/marp_math-3.png" width="400" alt="Marp Math"></td>
+<td><img src="assets/beamer_math-4.png" width="400" alt="Beamer Math"></td>
+</tr>
+</table>
 
 ## Example Markdown
 
