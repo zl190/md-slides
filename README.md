@@ -103,6 +103,8 @@ The skill automatically selects the best tool:
 | **[python-pptx](https://python-pptx.readthedocs.io/)** | PPTX | Template-based, fine control |
 | **[reveal.js](https://revealjs.com/)** | HTML | Web presentations |
 
+> **Note:** Marp only requires Node.js (`npm install -g @marp-team/marp-cli`). Beamer requires a full LaTeX installation (`sudo apt install texlive-full` ~4GB).
+
 ## Visual Comparison
 
 ### Marp vs Beamer Output
