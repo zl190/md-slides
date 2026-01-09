@@ -61,7 +61,7 @@ python samples/test_python_pptx.py
 ## Project Structure
 
 ```
-slides_marker/
+md-slides-tools/
 ├── README.md                          # This file
 ├── CLAUDE.md                          # Claude Code instructions
 ├── docs/
@@ -69,12 +69,9 @@ slides_marker/
 │   ├── report-research-zh.md          # Detailed research report (Chinese)
 │   ├── sample-universal.md            # Universal test markdown
 │   └── sample-marp-format.md          # Marp-specific sample
-├── output/                            # Generated slides
-│   ├── presentation-showcase-zh.pdf
-│   ├── marp_output.pdf
-│   ├── pandoc_beamer_*.pdf
-│   └── ...
-├── screenshots/                       # Visual comparisons
+├── output/                            # Generated slides (gitignored)
+├── screenshots/                       # Test artifacts (gitignored)
+├── assets/                            # Documentation images (committed)
 │   ├── marp_default-1.png
 │   ├── beamer_metropolis-1.png
 │   └── ...
@@ -90,19 +87,19 @@ slides_marker/
 
 | Marp (Default) | Beamer (Metropolis) |
 |:--------------:|:-------------------:|
-| ![Marp](screenshots/marp_default-1.png) | ![Beamer](screenshots/beamer_metropolis-1.png) |
+| ![Marp](assets/marp_default-1.png) | ![Beamer](assets/beamer_metropolis-1.png) |
 
 ### Code Highlighting
 
 | Marp | Beamer |
 |:----:|:------:|
-| ![Marp Code](screenshots/marp_code-2.png) | ![Beamer Code](screenshots/beamer_code-3.png) |
+| ![Marp Code](assets/marp_code-2.png) | ![Beamer Code](assets/beamer_code-3.png) |
 
 ### Math Formulas
 
 | Marp (MathJax) | Beamer (LaTeX) |
 |:--------------:|:--------------:|
-| ![Marp Math](screenshots/marp_math-3.png) | ![Beamer Math](screenshots/beamer_math-4.png) |
+| ![Marp Math](assets/marp_math-3.png) | ![Beamer Math](assets/beamer_math-4.png) |
 
 ## Key Findings
 

@@ -105,7 +105,7 @@ style: |
 
 **研究目标**: 对比分析主流工具的视觉效果与 LLM 智能体集成能力
 
-研究员: HongLab 团队
+研究员: zl190
 日期: 2026
 
 ---
@@ -228,11 +228,11 @@ style: |
 
 <div class="comparison">
 <div>
-<img src="../screenshots/marp_default-1.png" alt="Marp">
+<img src="../assets/marp_default-1.png" alt="Marp">
 <p><strong>Marp 默认主题</strong></p>
 </div>
 <div>
-<img src="../screenshots/beamer_metropolis-1.png" alt="Beamer">
+<img src="../assets/beamer_metropolis-1.png" alt="Beamer">
 <p><strong>Beamer Metropolis</strong></p>
 </div>
 </div>
@@ -245,11 +245,11 @@ style: |
 
 <div class="comparison">
 <div>
-<img src="../screenshots/marp_default-1.png" alt="Default">
+<img src="../assets/marp_default-1.png" alt="Default">
 <p><strong>默认主题</strong></p>
 </div>
 <div>
-<img src="../screenshots/marp_gaia-1.png" alt="Gaia">
+<img src="../assets/marp_gaia-1.png" alt="Gaia">
 <p><strong>Gaia 主题</strong></p>
 </div>
 </div>
@@ -262,15 +262,15 @@ style: |
 
 <div class="triple">
 <div>
-<img src="../screenshots/beamer_metropolis-1.png" alt="Metropolis">
+<img src="../assets/beamer_metropolis-1.png" alt="Metropolis">
 <p>Metropolis</p>
 </div>
 <div>
-<img src="../screenshots/beamer_madrid-1.png" alt="Madrid">
+<img src="../assets/beamer_madrid-1.png" alt="Madrid">
 <p>Madrid</p>
 </div>
 <div>
-<img src="../screenshots/beamer_berlin-1.png" alt="Berlin">
+<img src="../assets/beamer_berlin-1.png" alt="Berlin">
 <p>Berlin</p>
 </div>
 </div>
@@ -283,11 +283,11 @@ style: |
 
 <div class="comparison">
 <div>
-<img src="../screenshots/marp_code-2.png" alt="Marp Code">
+<img src="../assets/marp_code-2.png" alt="Marp Code">
 <p><strong>Marp</strong> - 现代高亮</p>
 </div>
 <div>
-<img src="../screenshots/beamer_code-3.png" alt="Beamer Code">
+<img src="../assets/beamer_code-3.png" alt="Beamer Code">
 <p><strong>Beamer</strong> - LaTeX 风格</p>
 </div>
 </div>
@@ -300,11 +300,11 @@ style: |
 
 <div class="comparison">
 <div>
-<img src="../screenshots/marp_math-3.png" alt="Marp Math">
+<img src="../assets/marp_math-3.png" alt="Marp Math">
 <p><strong>Marp</strong> - MathJax 渲染</p>
 </div>
 <div>
-<img src="../screenshots/beamer_math-4.png" alt="Beamer Math">
+<img src="../assets/beamer_math-4.png" alt="Beamer Math">
 <p><strong>Beamer</strong> - LaTeX 原生</p>
 </div>
 </div>

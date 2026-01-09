@@ -1,0 +1,45 @@
+# Output files
+output/
+
+# Screenshots (generated during testing)
+screenshots/
+
+# Node.js (for Slidev)
+node_modules/
+package-lock.json
+.npm
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+.env
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
