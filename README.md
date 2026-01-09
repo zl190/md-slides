@@ -66,7 +66,7 @@ The skill uses natural language — just describe what you want:
 /md-slides "Create slides about Q4 results, executive style, keep it brief"
 ```
 
-**Workflow:** When generating from a prompt, Claude writes the `.md` file first so you can review and edit before converting to PDF/PPTX.
+**Workflow:** When generating from a prompt, Claude writes the `.md` file first, giving you a chance to adjust the content if needed.
 
 <p align="center">
 <img src="assets/flowchart.png" width="600" alt="How md-slides works">
