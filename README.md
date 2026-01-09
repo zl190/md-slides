@@ -68,6 +68,10 @@ The skill uses natural language — just describe what you want:
 
 **Workflow:** When generating from a prompt, Claude writes the `.md` file first so you can review and edit before converting to PDF/PPTX.
 
+<p align="center">
+<img src="assets/flowchart.png" width="600" alt="How md-slides works">
+</p>
+
 ## Flavors
 
 Claude understands these style preferences:
