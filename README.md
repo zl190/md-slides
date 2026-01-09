@@ -8,7 +8,7 @@
   <a href="#installation">Install</a> •
   <a href="#usage">Usage</a> •
   <a href="#flavors">Flavors</a> •
-  <a href="https://zl190.github.io/md-slides-tools/">Live Demo</a>
+  <a href="https://zl190.github.io/md-slides/">Live Demo</a>
 </p>
 
 <p align="center">
@@ -42,7 +42,7 @@ Claude will:
 
 ```bash
 # Clone this repo
-git clone https://github.com/zl190/md-slides-tools.git
+git clone https://github.com/zl190/md-slides.git
 
 # The skill is in .claude/skills/md-slides/
 # Claude Code auto-discovers skills in your project
