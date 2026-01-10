@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-<img src="assets/hero.png" width="700" alt="Markdown to Slides workflow">
+<img src="assets/flowchart.png" width="700" alt="How md-slides works">
 </p>
 
 ---
@@ -69,7 +69,7 @@ The skill uses natural language — just describe what you want:
 **Workflow:** When generating from a prompt, Claude writes the `.md` file first, giving you a chance to adjust the content if needed.
 
 <p align="center">
-<img src="assets/flowchart.png" width="600" alt="How md-slides works">
+<img src="assets/hero.png" width="600" alt="Markdown to Slides concept">
 </p>
 
 ## Flavors
