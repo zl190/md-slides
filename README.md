@@ -29,7 +29,11 @@
 
 ## What is this?
 
-A **Claude Code skill** that generates presentation slides from Markdown. Just describe what you want, and Claude creates the slides.
+A **Claude Code skill** that generates presentation slides from Markdown. Just describe what you want, or provide an existing `.md` file, and Claude will use proper tools to create the slides.
+
+<p align="center">
+<img src="assets/hero.png" width="600" alt="Markdown to Slides concept">
+</p>
 
 ```bash
 # In Claude Code:
@@ -37,7 +41,7 @@ A **Claude Code skill** that generates presentation slides from Markdown. Just d
 ```
 
 Claude will:
-1. Write the Markdown content
+1. Use or Write the Markdown content
 2. Choose the best tool (Marp, Beamer, etc.)
 3. Generate PDF/PPTX/HTML output
 
@@ -65,12 +69,6 @@ The skill uses natural language — just describe what you want:
 # With style preferences
 /md-slides "Create slides about Q4 results, executive style, keep it brief"
 ```
-
-**Workflow:** When generating from a prompt, Claude writes the `.md` file first, giving you a chance to adjust the content if needed.
-
-<p align="center">
-<img src="assets/hero.png" width="600" alt="Markdown to Slides concept">
-</p>
 
 ## Flavors
 
