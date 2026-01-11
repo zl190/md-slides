@@ -18,6 +18,7 @@
   <img src="https://img.shields.io/badge/LaTeX-008080?logo=latex" alt="LaTeX">
   <img src="https://img.shields.io/badge/Marp-CLI-blue?logo=markdown" alt="Marp">
   <img src="https://img.shields.io/badge/Pandoc-Beamer-orange?logo=latex" alt="Pandoc">
+  <img src="https://img.shields.io/badge/Gemini-Image_Gen-4285F4?logo=google" alt="Gemini Image Gen">
   <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
 </p>
 
@@ -29,7 +30,7 @@
 
 ## What is this?
 
-A **Claude Code skill** that generates presentation slides from Markdown. Just describe what you want, or provide an existing `.md` file, and Claude will use proper tools to create the slides.
+A **Claude Code skill** that generates presentation slides from Markdown. Just describe what you want, or provide an existing `.md` file, and Claude will use proper tools to create the slides — including AI-generated diagrams and illustrations via [mcp-image](https://github.com/xkiranj/mcp-image).
 
 <p align="center">
 <img src="assets/hero.png" width="600" alt="Markdown to Slides concept">
@@ -42,8 +43,9 @@ A **Claude Code skill** that generates presentation slides from Markdown. Just d
 
 Claude will:
 1. Use or Write the Markdown content
-2. Choose the best tool (Marp, Beamer, etc.)
-3. Generate PDF/PPTX/HTML output
+2. Generate diagrams/charts with AI (optional, requires mcp-image)
+3. Choose the best tool (Marp, Beamer, etc.)
+4. Generate PDF/PPTX/HTML output
 
 ## Installation
 
@@ -134,6 +136,29 @@ The skill automatically selects the best tool:
 <td><img src="assets/beamer_math-4.png" width="400" alt="Math"></td>
 </tr>
 </table>
+
+## AI Image Generation (Optional)
+
+Generate diagrams, flowcharts, and illustrations for your slides using [mcp-image](https://github.com/xkiranj/mcp-image) (powered by Google Gemini).
+
+<details>
+<summary><strong>Setup mcp-image</strong></summary>
+
+```bash
+claude mcp add mcp-image \
+  --env GEMINI_API_KEY=your-api-key \
+  --env IMAGE_OUTPUT_DIR=/path/to/images \
+  -- npx -y mcp-image
+```
+
+</details>
+
+```bash
+# Ask for slides with visuals
+/md-slides "Create architecture slides with diagrams for our microservices system"
+```
+
+Claude will generate images like flowcharts, architecture diagrams, and timelines, then embed them in your slides.
 
 ## Manual Usage (without Claude)
 
