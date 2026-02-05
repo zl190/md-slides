@@ -1,10 +1,10 @@
-# Looking Templates
+# Visual Templates
 
 Visual style templates for consistent slide rendering.
 
-## What's a "Looking Template"?
+## What's a "Visual Template"?
 
-A looking template defines the **visual appearance** of slides:
+A visual template defines the **visual appearance** of slides:
 - Frontmatter (marp settings, theme, size)
 - CSS (fonts, colors, table styles)
 - Title slide pattern
@@ -18,10 +18,10 @@ It does NOT define content structure — that's a separate concern.
 | `default-zh.md` | Chinese | Noto Sans CJK SC, minimal CSS |
 | `default-en.md` | English | Noto Sans, minimal CSS |
 
-## Using a Looking Template
+## Using a Visual Template
 
 When generating slides:
-1. Read the appropriate looking template
+1. Read the appropriate visual template
 2. Copy its frontmatter to your slides
 3. Follow its gotchas/rules
 

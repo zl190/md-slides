@@ -1,4 +1,4 @@
-# Default English Looking Template
+# Default English Visual Template
 
 Use this frontmatter for consistent English slides.
 

@@ -8,7 +8,7 @@
   <a href="#installation">Install</a> •
   <a href="#usage">Usage</a> •
   <a href="#flavors">Flavors</a> •
-  <a href="#looking-templates">Looking Templates</a> •
+  <a href="#visual-templates">Visual Templates</a> •
   <a href="https://zl190.github.io/md-slides/">Live Demo</a> •
   <a href="docs/presentation-showcase-zh.pdf">Showcase (PDF)</a>
 </p>
@@ -97,11 +97,11 @@ Claude understands these style preferences:
 /md-slides "ML research findings, academic style, bilingual"
 ```
 
-## Looking Templates
+## Visual Templates
 
-**Looking templates** ensure consistent visual output (fonts, CSS, rendering). Without them, slides may render differently each time due to font variations or CSS inconsistencies.
+**Visual templates** ensure consistent visual output (fonts, CSS, rendering). Without them, slides may render differently each time due to font variations or CSS inconsistencies.
 
-Templates are in `.claude/skills/md-slides/templates/looks/`:
+Templates are in `.claude/skills/md-slides/templates/visual/`:
 
 | Template | Language | Font Stack |
 |----------|----------|------------|
@@ -110,14 +110,14 @@ Templates are in `.claude/skills/md-slides/templates/looks/`:
 
 ### How It Works
 
-Claude automatically applies the appropriate looking template based on language. The template provides:
+Claude automatically applies the appropriate visual template based on language. The template provides:
 - Tested frontmatter (marp settings, theme, size)
 - Consistent font stack for reliable rendering
 - CSS that works across platforms
 
 ### Custom Looks
 
-Add your own templates to `templates/looks/`:
+Add your own templates to `templates/visual/`:
 
 ```markdown
 # My Corporate Look
@@ -137,7 +137,7 @@ style: |
 - ...
 ```
 
-See `templates/looks/README.md` for details.
+See `templates/visual/README.md` for details.
 
 ## Supported Tools
 
@@ -246,7 +246,7 @@ pandoc slides.md -t revealjs -s -o slides.html
 .claude/skills/md-slides/
 ├── SKILL.md                # The Claude Code skill
 ├── TOOLS.md                # Tool reference
-└── templates/looks/        # Visual consistency templates
+└── templates/visual/        # Visual consistency templates
     ├── default-zh.md       # Chinese
     └── default-en.md       # English
 docs/                       # Sample markdown & research

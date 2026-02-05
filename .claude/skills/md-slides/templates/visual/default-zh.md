@@ -1,4 +1,4 @@
-# Default Chinese Looking Template
+# Default Chinese Visual Template
 
 Use this frontmatter for consistent Chinese slides.
 

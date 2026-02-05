@@ -8,7 +8,7 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 Convert Markdown source files to presentation slides in multiple formats.
 
-> **First Step:** Always read and apply a looking template from `templates/looks/` before generating slides. This ensures consistent visual output.
+> **First Step:** Always read and apply a visual template from `templates/visual/` before generating slides. This ensures consistent visual output.
 
 ## Core Concept
 
@@ -154,17 +154,17 @@ pandoc slides.md -t revealjs -s -o slides.html
 pandoc slides.md -t revealjs -s -V theme=moon -o slides.html
 ```
 
-## Looking Templates (Visual Consistency)
+## Visual Templates (Visual Consistency)
 
-**IMPORTANT:** Before generating slides, always use a looking template for consistent rendering.
+**IMPORTANT:** Before generating slides, always use a visual template for consistent rendering.
 
-Looking templates are in `templates/looks/`:
+Visual templates are in `templates/visual/`:
 - `default-zh.md` — Chinese slides
 - `default-en.md` — English slides
 
 ### How to Use
 
-1. Read the appropriate template: `templates/looks/default-{lang}.md`
+1. Read the appropriate template: `templates/visual/default-{lang}.md`
 2. Copy its frontmatter exactly (don't modify)
 3. Follow the gotchas listed in the template
 
@@ -195,7 +195,7 @@ style: |
 
 ### Custom Looks
 
-Users can add custom looking templates to `templates/looks/`. See `templates/looks/README.md`.
+Users can add custom visual templates to `templates/visual/`. See `templates/visual/README.md`.
 
 ---
 
