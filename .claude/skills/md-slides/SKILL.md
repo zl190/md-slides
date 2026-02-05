@@ -1,31 +1,14 @@
 ---
 name: md-slides
-description: Convert Markdown to presentation slides in multiple formats (PDF, PPTX, HTML). Use when user mentions slides, presentations, Marp, Beamer, or wants to generate PDF/PPTX from markdown. Supports flavors (audience, style, language), visual comparisons, and AI-generated images via mcp-image.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, mcp__mcp-image__generate_image
+description: Convert Markdown to presentation slides in multiple formats (PDF, PPTX, HTML). Use when user mentions slides, presentations, Marp, Beamer, or wants to generate PDF/PPTX from markdown. Supports flavors (audience, style, language) and visual comparisons.
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
 # Markdown Universal Slides Generator
 
 Convert Markdown source files to presentation slides in multiple formats.
 
-## Workflow
-
-**From prompt (recommended workflow):**
-```
-Prompt → Claude writes slides.md → [Optional: Generate images] → User reviews/edits → Convert to PDF/PPTX
-```
-
-1. Generate markdown content based on user's prompt
-2. **Write to a .md file first** (e.g., `slides.md` or `output/slides.md`)
-3. **Optional**: If visuals needed and mcp-image is configured, generate diagrams/charts
-4. Tell user: "I've created `slides.md`. Review and edit if needed."
-5. **Ask before converting**: "Ready to convert to PDF/PPTX?"
-6. Convert using the appropriate tool (use `--allow-local-files` if images included)
-
-**From existing file:**
-```
-slides.md → Select tool → Convert to PDF/PPTX
-```
+> **First Step:** Always read and apply a looking template from `templates/looks/` before generating slides. This ensures consistent visual output.
 
 ## Core Concept
 
@@ -101,6 +84,22 @@ length: standard
 ```
 → Use Gaia with custom CSS, screenshots, comparisons
 
+## Prerequisites Check
+
+Before generating output, verify required tools are installed:
+
+| Tool | Check | Linux | macOS |
+|------|-------|-------|-------|
+| Marp | `marp --version` | `npm i -g @marp-team/marp-cli` | `brew install marp-cli` |
+| Pandoc | `pandoc --version` | `sudo apt install pandoc` | `brew install pandoc` |
+| XeLaTeX | `xelatex --version` | `sudo apt install texlive-full` | `brew install --cask mactex` |
+| pdftoppm | `pdftoppm -v` | `sudo apt install poppler-utils` | `brew install poppler` |
+
+**Workflow:**
+1. Check if required tool exists before running
+2. If missing, detect OS (`uname -s`) and show install command
+3. After install, verify with version check
+
 ## Available Tools & Best Use Cases
 
 | Tool | Best For | Output Formats | Command |
@@ -154,6 +153,51 @@ pandoc slides.md -t beamer --pdf-engine=xelatex \
 pandoc slides.md -t revealjs -s -o slides.html
 pandoc slides.md -t revealjs -s -V theme=moon -o slides.html
 ```
+
+## Looking Templates (Visual Consistency)
+
+**IMPORTANT:** Before generating slides, always use a looking template for consistent rendering.
+
+Looking templates are in `templates/looks/`:
+- `default-zh.md` — Chinese slides
+- `default-en.md` — English slides
+
+### How to Use
+
+1. Read the appropriate template: `templates/looks/default-{lang}.md`
+2. Copy its frontmatter exactly (don't modify)
+3. Follow the gotchas listed in the template
+
+### Quick Reference (Chinese)
+
+```yaml
+---
+marp: true
+theme: default
+paginate: true
+size: 16:9
+style: |
+  section {
+    font-family: 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
+  }
+  section.small-table table { font-size: 0.85em; }
+---
+```
+
+### Rules for Consistent Output
+
+| Rule | Reason |
+|------|--------|
+| Use frontmatter exactly as provided | Ensures consistent rendering |
+| Keep font stack as `'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif` | Consistent date/number rendering |
+| End slides with content, not directives | Clean final page |
+| Use `<!-- _class: lead -->` only on title slide | Proper centering where needed |
+
+### Custom Looks
+
+Users can add custom looking templates to `templates/looks/`. See `templates/looks/README.md`.
+
+---
 
 ## Markdown Slide Format
 
@@ -273,126 +317,6 @@ paginate: true
 | Images not loading (Marp) | Add `--allow-local-files` flag |
 | PPTX too large (Marp) | Normal - Marp embeds resources |
 | Math not rendering (reveal.js) | Add `--mathjax` flag |
-
-## AI Image Generation (mcp-image)
-
-Generate professional diagrams, charts, and illustrations for slides using the `mcp-image` MCP server powered by Google Gemini.
-
-### Prerequisites
-
-The user must have `mcp-image` configured:
-
-```bash
-claude mcp add mcp-image \
-  --env GEMINI_API_KEY=AIza... \
-  --env IMAGE_OUTPUT_DIR=/absolute/path/to/images \
-  -- npx -y mcp-image
-```
-
-### Image Generation Tool
-
-Use `mcp__mcp-image__generate_image` with these parameters:
-
-| Parameter | Required | Values | Description |
-|-----------|----------|--------|-------------|
-| `prompt` | Yes | string | Detailed description of the image |
-| `aspectRatio` | No | `1:1`, `16:9`, `9:16`, `21:9` | Default: `16:9` for slides |
-| `imageSize` | No | `2K`, `4K` | Default: `2K` |
-
-### Workflow with Image Generation
-
-```
-1. User requests slides with visuals
-2. Generate slide markdown content
-3. Identify slides needing diagrams/charts
-4. Call mcp-image to generate visuals
-5. Embed generated images in markdown
-6. Convert to PDF/PPTX with --allow-local-files
-```
-
-### Example: Generate Architecture Diagram
-
-```python
-# Step 1: Call mcp-image
-mcp__mcp-image__generate_image(
-    prompt="Professional flowchart showing: User → API Gateway → Microservices → Database. Clean lines, blue color scheme, white background, no text labels",
-    aspectRatio="16:9",
-    imageSize="2K"
-)
-# Returns: /path/to/images/generated-image.png
-```
-
-```markdown
-# Step 2: Embed in slides
----
-# System Architecture
-
-![Architecture Diagram](./images/generated-image.png)
-```
-
-### Best Prompts for Slide Visuals
-
-| Visual Type | Prompt Template |
-|-------------|-----------------|
-| **Flowchart** | "Professional flowchart showing: [steps]. Clean lines, [color] scheme, white background" |
-| **Architecture** | "System architecture diagram with [components]. Minimalist style, tech aesthetic" |
-| **Comparison** | "Side-by-side comparison chart: [A] vs [B]. Clear labels, contrasting colors" |
-| **Timeline** | "Horizontal timeline showing: [events with dates]. Modern design, clean" |
-| **Process** | "Step-by-step process diagram: [1] → [2] → [3]. Icons for each step" |
-| **Data viz** | "Bar/pie chart showing [data]. Professional style, [colors]" |
-
-### Image Generation Tips
-
-1. **Be specific**: "Blue color scheme, white background, minimalist" > "nice looking"
-2. **Specify no text**: Add "no text labels" if you'll add text in slides
-3. **Use 16:9**: Best aspect ratio for presentation slides
-4. **Request consistency**: "Same style as previous diagram" for visual coherence
-5. **Keep it simple**: Complex diagrams may not render well
-
-### Cost Awareness
-
-| Resolution | Cost per Image |
-|------------|----------------|
-| 2K | ~$0.04-0.07 |
-| 4K | ~$0.12-0.24 |
-
-**Tip**: Generate 2K for drafts, 4K for final presentations.
-
-### Complete Example: AI-Enhanced Slides
-
-```markdown
----
-marp: true
-theme: gaia
-paginate: true
----
-
-# Cloud Migration Strategy
-
----
-
-# Current Architecture
-
-![Current State](./images/current-arch.png)
-<!-- Generated: "Legacy monolithic architecture diagram with single database,
-     traditional servers, showing bottlenecks. Gray/red color scheme" -->
-
----
-
-# Target Architecture
-
-![Target State](./images/target-arch.png)
-<!-- Generated: "Modern cloud-native architecture with microservices,
-     Kubernetes, multiple databases. Blue/green color scheme, clean" -->
-
----
-
-# Migration Timeline
-
-![Timeline](./images/migration-timeline.png)
-<!-- Generated: "Horizontal timeline: Q1 Assessment → Q2 Pilot → Q3 Migration → Q4 Optimization.
-     Professional style, blue gradient" -->
-```
 
 ## Reference Files
 
