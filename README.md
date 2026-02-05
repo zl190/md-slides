@@ -105,12 +105,35 @@ Templates are in `.claude/skills/md-slides/templates/visual/`:
 
 | Template | Language | Font Stack |
 |----------|----------|------------|
-| `default-zh.md` | Chinese | Noto Sans CJK SC, Microsoft YaHei |
 | `default-en.md` | English | Noto Sans, Helvetica Neue |
+| `default-zh.md` | Chinese | Noto Sans CJK SC, Microsoft YaHei |
 
-<p align="center">
-<img src="assets/visual-template-zh.png" width="500" alt="Visual template example (Chinese)">
-</p>
+<table>
+<tr>
+<th>Title Slide</th>
+<th>Content Slide</th>
+</tr>
+<tr>
+<td><img src="assets/visual-en-1.png" width="400" alt="Title slide"></td>
+<td><img src="assets/visual-en-2.png" width="400" alt="Content slide"></td>
+</tr>
+</table>
+
+<details>
+<summary><strong>Chinese template example</strong></summary>
+
+<table>
+<tr>
+<th>Title Slide</th>
+<th>Content Slide</th>
+</tr>
+<tr>
+<td><img src="assets/visual-zh-1.png" width="400" alt="Title slide (Chinese)"></td>
+<td><img src="assets/visual-zh-2.png" width="400" alt="Content slide (Chinese)"></td>
+</tr>
+</table>
+
+</details>
 
 ### How It Works
 
