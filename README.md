@@ -108,6 +108,10 @@ Templates are in `.claude/skills/md-slides/templates/visual/`:
 | `default-zh.md` | Chinese | Noto Sans CJK SC, Microsoft YaHei |
 | `default-en.md` | English | Noto Sans, Helvetica Neue |
 
+<p align="center">
+<img src="assets/visual-template-zh.png" width="500" alt="Visual template example (Chinese)">
+</p>
+
 ### How It Works
 
 Claude automatically applies the appropriate visual template based on language. The template provides:
